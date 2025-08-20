@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Search</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-neutral-950">
+    <div class="container mx-auto mt-10">
+        <div class="flex flex-row mx-auto my-auto gap-2 w-fit">
+            <input class="flex rounded px-2 py-1 text-neutral-50 outline-none focus:border-emerald-500 border border-2 border-neutral-700" type="text" id="searchInput" placeholder="Search for an artist">
+            <button id="searchButton" class="hover:border-emerald-500 text-neutral-300 px-2 py-1 rounded bg-neutral-800 border border-2 border-solid border-neutral-600" type="submit">Search</button>
+        </div>
+    </div>
+
+    <div class="text-neutral-50 flex flex-wrap justify-center mt-8 gap-4" id="results"></div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
