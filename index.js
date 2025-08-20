@@ -21,20 +21,20 @@ document.getElementById("searchButton").addEventListener("click",async function(
     const resultsDiv = document.getElementById("results");
     resultsDiv.innerHTML = "";
 
-    const firstTenIDs = objectIDs.slice(0, 10); //get the first 10
+    const firstTwentyIDs = objectIDs.slice(0, 50); //get the first 20
 
-    for(let id of firstTenIDs){
+    for(let id of firstTwentyIDs){
         const detailResponse = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`);
         const detailData = await detailResponse.json();
 
         //Skip if no image
-        if(!detailData.primaryImageSmall) continue;
+        if(!detailData.primaryImage) continue;
 
         const card = document.createElement("div");
-        card.className = "w-60 bg-neutral-800 text-white p-4 rounded";
+        card.className = "w-96 bg-neutral-800 text-white p-4 rounded";
       
         card.innerHTML = `
-          <img src="${detailData.primaryImageSmall}" alt="${detailData.title}" class="w-full rounded mb-2">
+          <img src="${detailData.primaryImage}" alt="${detailData.title}" class="object-cover w-60 md:w-80 lg:w-96 rounded mb-2">
           <h3 class="text-lg font-bold mb-1">${detailData.title}</h3>
           <p class="text-sm text-neutral-300">${detailData.artistDisplayName || "Unknown artist"}</p>
         `;
